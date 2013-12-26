@@ -201,6 +201,7 @@
 #endif
 
 namespace bc = libbitcoin;
+namespace bitcoin = libbitcoin; // Prefer the name 'bitcoin'.
 
 #endif
 
