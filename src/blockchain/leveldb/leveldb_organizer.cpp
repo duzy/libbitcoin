@@ -28,7 +28,7 @@ namespace libbitcoin {
 leveldb_organizer::leveldb_organizer(leveldb_common_ptr common,
     orphans_pool_ptr orphans, leveldb_chain_keeper_ptr chain,
     reorganize_handler handler)
-  : organizer(orphans, chain), common_(common), chain_(chain), handler_(handler)
+  : organizer(orphans, chain), common_(common), handler_(handler)
 {
 }
 
@@ -51,7 +51,7 @@ std::error_code leveldb_organizer::verify(int fork_index,
     if (ec)
         return ec;
     // Skip non-essential checks if before last checkpoint.
-    if (fork_index < 262835)
+    if (fork_index < 278702)
         return std::error_code();
     // Perform strict but slow tests - connect_block()
     return validate.connect_block();
